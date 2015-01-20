@@ -1,6 +1,12 @@
 # golem0
 Framework dedicated for Arduino
 
+## Installation
+
+Create folder `golem0` in `(My) Documents/Arduino/libraries/` and copy there content of `libraries` from this repo. 
+
+You can find more detailed description here: http://arduino.cc/en/Guide/Libraries
+
 ## Usage
 
 ### Code structure
@@ -29,7 +35,8 @@ void world_init()
 
 Think is single tick of original loop with controllable non-blocking delay.
 To use it, create class extending ManagedEntity and override method `onThink`. 
-Make sure to call `setNextThink` to receive next think.
+
+**Important:** make sure to call `setNextThink` to receive next think.
 
 Example:
 
