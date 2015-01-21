@@ -10,22 +10,21 @@ void loop()
     World::loop();
 }
 
-class BlinkPinController : public OutputPin
+class BlinkLed : public Led
 {
     protected:
-        bool value;
+        bool state;
 
     public:
-        BlinkPinController(int pin) : OutputPin(pin)
+        BlinkLed(int pin) : Led(pin)
         {
-          this->value = true;
+          this->state = true;
         }
 
        void onThink(long currentTime)
        {
-            this->value = !this->value;
-
-            this->writeDigital(this->value ? HIGH : LOW);
+            this->state = !this->state;
+            this->setOn(this->state);
 
             this->setNextThink(currentTime + 500);
        }
@@ -33,5 +32,5 @@ class BlinkPinController : public OutputPin
 
 void world_init()
 {
-   World::addEntity(new BlinkPinController(13));
+   World::addEntity(new BlinkLed(13));
 }

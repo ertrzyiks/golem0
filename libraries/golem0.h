@@ -5,9 +5,12 @@
 
 #include "core/entity.h"
 #include "core/world.h"
+
 #include "pin/pin.h"
 #include "pin/input_pin.h"
 #include "pin/output_pin.h"
+
+#include "devices/led/led.h"
 
 void world_init();
 
