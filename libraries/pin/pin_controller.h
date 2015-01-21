@@ -3,7 +3,7 @@
 
 #include <Arduino.h>
 
-class PinController : public ManagedEntity
+class PinController : public Entity
 {
     protected:
         int pinNumber;
