@@ -10,13 +10,13 @@ void loop()
     World::loop();
 }
 
-class BlinkPinController : public PinController
+class BlinkPinController : public OutputPin
 {
     protected:
         bool value;
 
     public:
-        BlinkPinController(int pin) : PinController(pin, OUTPUT)
+        BlinkPinController(int pin) : OutputPin(pin)
         {
           this->value = true;
         }
