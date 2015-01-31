@@ -12,6 +12,7 @@
 #include "pin/output_pin.h"
 
 #include "devices/led/led.h"
+#include "devices/button/button.h"
 
 void world_init();
 

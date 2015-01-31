@@ -8,6 +8,7 @@ class Pin : public Entity
     protected:
         int pinNumber;
         int mode;
+        bool didSetup;
 
     public:
         Pin(int number, int mode);

@@ -1,10 +1,14 @@
 #ifndef _golem0_entity_included
 #define _golem0_entity_included
 
+#ifndef ENTITY_ID_MAXLEN
+#define ENTITY_ID_MAXLEN 32
+#endif
+
 class Entity
 {
     protected:
-        int id;
+        char id[ENTITY_ID_MAXLEN];
 
         bool bRequestedThink;
         long lNextThink;
@@ -14,8 +18,11 @@ class Entity
     public:
         Entity();
 
-        void setId(int id);
-        int getId();
+        void setId(const char* entId);
+        void getId(char* entId, int maxLength);
+
+        bool hasId();
+        bool hasId(const char* entId);
 
         void tryThink(long currentTime);
 

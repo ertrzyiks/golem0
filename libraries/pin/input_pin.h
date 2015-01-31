@@ -10,6 +10,7 @@ class InputPin : public Pin
         InputPin(int number) : Pin(number, INPUT) {};
 
         void isPullUp(bool state);
+        bool isPullUp();
 
         int readDigital();
         int readAnalog();

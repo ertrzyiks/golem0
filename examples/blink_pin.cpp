@@ -18,7 +18,7 @@ class BlinkPinController : public OutputPin
     public:
         BlinkPinController(int pin) : OutputPin(pin)
         {
-          this->value = true;
+            this->value = true;
         }
 
        void onThink(long currentTime)

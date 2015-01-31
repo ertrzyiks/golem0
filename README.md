@@ -53,6 +53,6 @@ class MyClass : public ManagedEntity {
 
 void world_init()
 {
-   MyClass *obj = new MyClass();
+    World::addEntity(new MyClass());
 }
 ```

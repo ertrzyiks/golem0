@@ -8,3 +8,4 @@
 #include "pin/output_pin.cpp"
 
 #include "devices/led/led.cpp"
+#include "devices/button/button.cpp"
