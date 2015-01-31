@@ -5,6 +5,7 @@
 
 #include "core/entity.h"
 #include "core/world.h"
+#include "core/log.h"
 
 #include "pin/pin.h"
 #include "pin/input_pin.h"
