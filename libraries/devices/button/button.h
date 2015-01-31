@@ -5,10 +5,16 @@
 
 class Button : public InputPin
 {
+    protected:
+        int lastState;
+
     public:
-        Button(int number) : InputPin(number) {};
+        Button(int number);
 
         void tryThink(long currentTime);
+
+        virtual void onKeyDown();
+        virtual void onKeyUp();
 };
 
 #endif

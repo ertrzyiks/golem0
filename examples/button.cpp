@@ -3,7 +3,6 @@
 
 void setup()
 {
-    Serial.begin(9600);
     World::setup();
 }
 
@@ -23,10 +22,14 @@ class MyButton : public Button
             this->led = (Led*) World::findEntityById(ledId);
         }
 
-        void onThink(long currentTime)
+        void onKeyDown()
         {
-            this->led->setOn(this->readDigital());
-            this->setNextThink(currentTime + 1000);
+            this->led->on();
+        }
+
+        void onKeyUp()
+        {
+            this->led->off();
         }
 };
 

@@ -24,7 +24,7 @@ class Entity
         bool hasId();
         bool hasId(const char* entId);
 
-        void tryThink(long currentTime);
+        virtual void tryThink(long currentTime);
 
         virtual void onSetup();
         virtual void onThink(long currentTime);
