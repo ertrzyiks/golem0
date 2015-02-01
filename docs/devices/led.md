@@ -2,11 +2,12 @@
 
 Single color Led.
 
-## <i class="fa fa-caret-right"></i> Constructor
+## Constructor
 
     Led(int pinNumber);
 
-## <i class="fa fa-folder-o"></i> Public methods 
+## Public methods 
+---
 
 ### on
 

@@ -3,7 +3,7 @@
 World is static class that should be injected into Arduino setup and loop methds. 
 It allows you to manage entities.
 
-## <i class="fa fa-folder-o"></i> Public methods
+## Public methods
 ---
 
 ### World::loop

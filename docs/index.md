@@ -2,7 +2,7 @@
 Framework dedicated for Arduino
 
 It is lightweight and easy to integrate with existing code by design. 
-Let you write well organized code for 
+Let you write well organized code and easier model communication between components.
 
 ## Installation
 

@@ -1,10 +1,9 @@
 # OutputPin : Pin
 
-## <i class="fa fa-caret-right"></i> Constructor
----
+## Constructor
     OutputPin(int pinNumber);
 
-## <i class="fa fa-folder-o"></i> Public methods
+## Public methods
 ---
 
 ### writeDigital
