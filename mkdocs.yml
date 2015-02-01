@@ -10,4 +10,4 @@ pages:
 - [devices/led.md, Devices, Led]
 - [devices/button.md, Devices, Button]
 
-theme: flatly
+theme: united

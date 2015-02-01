@@ -1,10 +1,11 @@
 # InputPin : Pin
 
-## Constructor
-
+## <i class="fa fa-caret-right"></i> Constructor
+---
     InputPin(int pinNumber);
 
-## Public methods
+## <i class="fa fa-folder-o"></i> Public methods
+---
 
 ### isPullUp
 

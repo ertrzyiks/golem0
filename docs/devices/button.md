@@ -2,11 +2,11 @@
 
 Simple switch
 
-## Constructor
+## <i class="fa fa-caret-right"></i> Constructor
 
     Button(int pinNumber);
 
-## Callbacks
+## <i class="fa fa-bolt"></i> Callbacks
 
 ### onKeyDown
 

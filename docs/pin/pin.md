@@ -5,8 +5,8 @@ Abstract class for two uses of pins
  * [InputPin](output_pin.md)
  * [OutputPin](input_pin.md)
  
-## Constructor
- 
+## <i class="fa fa-caret-right"></i> Constructor
+---
     Pin(int pinNumber, int mode);
  
 `pinNumber` is yeah.. number of pin
