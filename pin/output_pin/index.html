@@ -7,14 +7,14 @@
         
         
         
-        <link rel="shortcut icon" href="./img/favicon.ico">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
 
-        <title>Golem0</title>
+        <title>OutputPin - Golem0</title>
 
-        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link href="./css/prettify-1.0.css" rel="stylesheet">
-        <link href="./css/base.css" rel="stylesheet">
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -39,7 +39,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">Golem0</a>
+            <a class="navbar-brand" href="../..">Golem0</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -49,31 +49,31 @@
             
             
                 <li >
-                    <a href="world/">World</a>
+                    <a href="../../world">World</a>
                 </li>
             
             
             
                 <li >
-                    <a href="entity/">Entity</a>
+                    <a href="../../entity">Entity</a>
                 </li>
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pins <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="pin/pin/">Pin</a>
+                            <a href="../pin">Pin</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href=".">OutputPin</a>
                         </li>
                     
                         <li >
-                            <a href="pin/output_pin/">OutputPin</a>
-                        </li>
-                    
-                        <li >
-                            <a href="pin/input_pin/">InputPin</a>
+                            <a href="../input_pin">InputPin</a>
                         </li>
                     
                     </ul>
@@ -86,11 +86,11 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="devices/led/">Led</a>
+                            <a href="../../devices/led">Led</a>
                         </li>
                     
                         <li >
-                            <a href="devices/button/">Button</a>
+                            <a href="../../devices/button">Button</a>
                         </li>
                     
                     </ul>
@@ -102,13 +102,13 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 
-                <li class="disabled">
-                    <a rel="next" >
+                <li >
+                    <a rel="next" href="../pin">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="world/">
+                    <a rel="prev" href="../input_pin">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -131,71 +131,36 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#golem0">Golem0</a></li>
+        <li class="main active"><a href="#outputpin-pin">OutputPin : Pin</a></li>
         
-            <li><a href="#installation">Installation</a></li>
+            <li><a href="#constructor">Constructor</a></li>
         
-            <li><a href="#basic-concepts">Basic concepts</a></li>
+            <li><a href="#public-methods">Public methods</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="golem0">Golem0</h1>
-<p>Framework dedicated for Arduino</p>
-<p>It is lightweight and easy to integrate with existing code by design. 
-Let you write well organized code for </p>
-<h2 id="installation">Installation</h2>
-<p>Create folder <code>golem0</code> in <code>(My) Documents/Arduino/libraries/</code> and copy there content of <code>libraries</code> from this repo.</p>
-<p>Now restart Arduino IDE and you should see it under <em>Sketch</em> -&gt; <em>Import library</em> -&gt; <em>golem0</em></p>
-<p>You can find more detailed description here: <a href="http://arduino.cc/en/Guide/Libraries">http://arduino.cc/en/Guide/Libraries</a></p>
-<h2 id="basic-concepts">Basic concepts</h2>
-<h3 id="loop-and-setup-handling">Loop and setup handling</h3>
-<p>To let Golem do its job you need to forward to <code>World</code> setup and loop calls, like this:</p>
-<pre><code class="c++">void setup()
-{
-    World::setup();
-}
-
-void loop()
-{
-    World::loop();
-}
+<h1 id="outputpin-pin">OutputPin : Pin</h1>
+<h2 id="constructor">Constructor</h2>
+<pre><code>OutputPin(int pinNumber);
 </code></pre>
-
-<h3 id="world-init">World init</h3>
-<p>Global function <code>world_init</code> is your place it initialize world and entities. 
-Once configured there, entities will get their setup and can react according to time thanks to callbacks from main loop.</p>
-<h3 id="thinking">Thinking</h3>
-<p>Think is single tick of original loop with controllable non-blocking delay.
-To use it, create class extending Entity, override method <code>onThink</code> and add entity to world. </p>
-<p><strong>Important:</strong> make sure to call <code>setNextThink</code> to receive next think.</p>
-<p>Example:</p>
-<pre><code class="c++">class MyClass : public Entity {
-    void onThink(long currentTime)
-    {
-        //Do something
-
-        //Schedule next think for 10ms
-        this-&gt;setNextThink(currentTime + 10);
-    }
-};
-
-void world_init()
-{
-    World::addEntity(new MyClass());
-}
+<h2 id="public-methods">Public methods</h2>
+<h3 id="writedigital">writeDigital</h3>
+<pre><code>void writeDigital(int value);
 </code></pre>
-
+<h3 id="writeanalog">writeAnalog</h3>
+<pre><code>void writeAnalog(int value);
+</code></pre>
 </div>
         </div>
 
         
 
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="./js/bootstrap-3.0.3.min.js"></script>
-        <script src="./js/prettify-1.0.min.js"></script>
-        <script src="./js/base.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/base.js"></script>
     </body>
 </html>
