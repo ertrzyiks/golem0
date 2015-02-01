@@ -11,7 +11,7 @@ class Pin : public Entity
         bool didSetup;
 
     public:
-        Pin(int number, int mode);
+        Pin(int pinNumber, int mode);
 
         void onSetup();
 };

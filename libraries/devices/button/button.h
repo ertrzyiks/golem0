@@ -9,7 +9,7 @@ class Button : public InputPin
         int lastState;
 
     public:
-        Button(int number);
+        Button(int pinNumber);
 
         void tryThink(long currentTime);
 

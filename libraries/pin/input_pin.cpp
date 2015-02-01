@@ -1,6 +1,11 @@
 #include "input_pin.h"
 #include "../core/log.h"
 
+InputPin::InputPin(int pinNumber) : Pin(pinNumber, INPUT)
+{
+
+}
+
 int InputPin::readDigital()
 {
     return digitalRead(this->pinNumber);

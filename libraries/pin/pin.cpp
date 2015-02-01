@@ -1,8 +1,8 @@
 #include "pin.h"
 
-Pin::Pin(int number, int mode)
+Pin::Pin(int pinNumber, int mode)
 {
-    this->pinNumber = number;
+    this->pinNumber = pinNumber;
     this->mode = mode;
     this->didSetup = false;
 }

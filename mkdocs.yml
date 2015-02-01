@@ -1,0 +1,13 @@
+site_name: Golem0
+repo_url: https://github.com/ertrzyiks/golem0
+pages:
+- [index.md, Home]
+- [world.md, World]
+- [entity.md, Entity]
+- [pin/pin.md, Pins, Pin]
+- [pin/output_pin.md, Pins, OutputPin]
+- [pin/input_pin.md, Pins, InputPin]
+- [devices/led.md, Devices, Led]
+- [devices/button.md, Devices, Button]
+
+theme: flatly

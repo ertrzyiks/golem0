@@ -7,7 +7,7 @@
 class OutputPin : public Pin
 {
     public:
-        OutputPin(int number) : Pin(number, OUTPUT) {};
+        OutputPin(int pinNumber);
 
         void writeDigital(int value);
         void writeAnalog(int value);

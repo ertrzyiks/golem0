@@ -2,7 +2,7 @@
 #include "button.h"
 
 
-Button::Button(int number) : InputPin(number)
+Button::Button(int pinNumber) : InputPin(pinNumber)
 {
     this->lastState = LOW;
 }

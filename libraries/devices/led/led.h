@@ -6,7 +6,7 @@
 class Led : public OutputPin
 {
     public:
-        Led(int number) : OutputPin(number) {};
+        Led(int pinNumber);
 
         void on();
         void off();

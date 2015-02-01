@@ -34,14 +34,14 @@ void world_init()
 ### Thinking
 
 Think is single tick of original loop with controllable non-blocking delay.
-To use it, create class extending ManagedEntity and override method `onThink`. 
+To use it, create class extending Entity, override method `onThink` and add entity to world. 
 
 **Important:** make sure to call `setNextThink` to receive next think.
 
 Example:
 
 ```c++
-class MyClass : public ManagedEntity {
+class MyClass : public Entity {
     void onThink(long currentTime)
     {
         //Do something

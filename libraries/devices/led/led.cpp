@@ -1,6 +1,11 @@
 #include <Arduino.h>
 #include "led.h"
 
+Led::Led(int pinNumber) : OutputPin(pinNumber)
+{
+
+}
+
 void Led::on()
 {
     this->writeDigital(HIGH);

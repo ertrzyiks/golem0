@@ -7,7 +7,7 @@
 class InputPin : public Pin
 {
     public:
-        InputPin(int number) : Pin(number, INPUT) {};
+        InputPin(int pinNumber);
 
         void isPullUp(bool state);
         bool isPullUp();
