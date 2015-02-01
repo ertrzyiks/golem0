@@ -2,11 +2,11 @@
 
 Simple switch
 
-## Constructor
+## <i class="fa fa-star"></i> Constructor
 
     Button(int pinNumber);
 
-## Callbacks
+## <i class="fa fa-exclamation-circle"></i> Callbacks
 ---
 
 ### onKeyDown

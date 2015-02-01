@@ -1,10 +1,10 @@
 # InputPin : Pin
 
-## Constructor
+## <i class="fa fa-star"></i> Constructor
 
     InputPin(int pinNumber);
 
-## Public methods
+## <i class="fa fa-code"></i> Public methods
 ---
 
 ### isPullUp

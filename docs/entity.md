@@ -2,7 +2,7 @@
 
 Single entity of world. Elements of world should extend this class adding custom behavior using callbacks.
 
-## Callbacks
+## <i class="fa fa-exclamation-circle"></i> Callbacks
 ---
 
 ### onSetup
@@ -18,7 +18,7 @@ Each entity will think once on first loop call and then always when scheduled wi
 
     virtual void onThink(long currentTime);
     
-## Public methods
+## <i class="fa fa-code"></i> Public methods
 ---
 
 ### setNextThink

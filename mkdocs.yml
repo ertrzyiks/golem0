@@ -10,4 +10,5 @@ pages:
 - [devices/led.md, Devices, Led]
 - [devices/button.md, Devices, Button]
 
-theme: flatly
+theme: readthedocs
+theme_dir: docs/theme
