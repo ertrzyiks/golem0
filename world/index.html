@@ -133,7 +133,13 @@
     
         <li class="main active"><a href="#world">World</a></li>
         
-            <li><a href="#public-methods">Public methods</a></li>
+            <li><a href="#worldloop">World::loop</a></li>
+        
+            <li><a href="#worldsetup">World::setup</a></li>
+        
+            <li><a href="#worldaddentity">World::addEntity</a></li>
+        
+            <li><a href="#worldfindentitybyid">World::findEntityById</a></li>
         
     
     </ul>
@@ -143,7 +149,8 @@
 <h1 id="world">World</h1>
 <p>World is static class that should be injected into Arduino setup and loop methds. 
 It allows you to manage entities.</p>
-<h2 id="public-methods">Public methods</h2>
+<h2 id="public-methods"><i class="fa fa-folder-o"></i> Public methods</h2>
+<hr />
 <h3 id="worldloop">World::loop</h3>
 <p>Handle timing based implementations. This function should be called in Arduino loop function. </p>
 <pre><code>static void loop();
