@@ -96,6 +96,9 @@
                                 <li><a class="toctree-l3" href="#onkeyup">onKeyUp</a></li>
                             
                         
+                            <li class="toctree-l2"><a href="#ispullup">isPullUp</a></li>
+                            
+                        
                         </ul>
                     
                 </li>
@@ -137,7 +140,24 @@
                 <div role="main">
                     <div class="section">
                         <h1 id="button-inputpin">Button : InputPin</h1>
-<p>Simple switch</p>
+<p>Simple switch. Its pull-down by default. 
+You can use this class with button in pull-up configuration by calling <a href="#ispullup">isPullUp</a> with <code>true</code> as first param,
+like this:</p>
+<pre><code class="c++">class PullUpButton : public Button
+{
+    public:
+        PullUpButton(int pin) : Button(pin)
+        {
+            this-&gt;isPullUp(true);
+        }
+};
+
+void world_init()
+{
+    World::addEntity(new PullUpButton(2));
+}
+</code></pre>
+
 <h2 id="constructor"><i class="fa fa-pencil"></i> Constructor</h2>
 <pre><code>Button(int pinNumber);
 </code></pre>
@@ -151,6 +171,9 @@
 <p>Called when switch button is up (released).</p>
 <pre><code>virtual void onKeyUp();
 </code></pre>
+<h2 id="public-methods"><i class="fa fa-code"></i> Public methods</h2>
+<h3 id="ispullup">isPullUp</h3>
+<p>Inherited from <a href="../../pin/input_pin#ispullup">InputPin::isPullUp</a></p>
 
                     </div>
                 </div>
