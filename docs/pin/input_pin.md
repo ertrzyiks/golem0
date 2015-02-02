@@ -1,6 +1,6 @@
 # InputPin : Pin
 
-## <i class="fa fa-star"></i> Constructor
+## <i class="fa fa-pencil"></i> Constructor
 
     InputPin(int pinNumber);
 

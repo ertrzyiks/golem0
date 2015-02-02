@@ -1,6 +1,6 @@
 # OutputPin : Pin
 
-## <i class="fa fa-star"></i> Constructor
+## <i class="fa fa-pencil"></i> Constructor
     OutputPin(int pinNumber);
 
 ## <i class="fa fa-code"></i> Public methods

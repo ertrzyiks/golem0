@@ -2,7 +2,7 @@
 
 Simple switch
 
-## <i class="fa fa-star"></i> Constructor
+## <i class="fa fa-pencil"></i> Constructor
 
     Button(int pinNumber);
 
