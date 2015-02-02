@@ -43,6 +43,10 @@ Entity* World::findEntityById(const char* entId)
 void World::setup()
 {
     world_init();
+
+    for (int i = 0; i <= lastIndex; i++) {
+        entities[i]->onSetup();
+    }
 }
 
 void World::loop()

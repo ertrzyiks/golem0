@@ -13,7 +13,7 @@ class Pin : public Entity
     public:
         Pin(int pinNumber, int mode);
 
-        void onSetup();
+        virtual void onSetup();
 };
 
 #endif
