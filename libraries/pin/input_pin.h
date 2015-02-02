@@ -6,6 +6,9 @@
 
 class InputPin : public Pin
 {
+    protected:
+        virtual void onPullUpChange(bool state);
+
     public:
         InputPin(int pinNumber);
 

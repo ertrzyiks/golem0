@@ -28,9 +28,16 @@ void InputPin::isPullUp(bool state)
     } else {
         this->mode = INPUT;
     }
+
+    this->onPullUpChange(this->mode);
 };
 
 bool InputPin::isPullUp()
 {
     return (this->mode == INPUT_PULLUP);
 };
+
+void InputPin::onPullUpChange(bool state)
+{
+    //Do nothing by default
+}

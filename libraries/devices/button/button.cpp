@@ -1,10 +1,9 @@
 #include <Arduino.h>
 #include "button.h"
 
-
 Button::Button(int pinNumber) : InputPin(pinNumber)
 {
-    this->lastState = LOW;
+    this->updatePullUpDownSettings();
 }
 
 void Button::tryThink(long currentTime)
@@ -13,8 +12,8 @@ void Button::tryThink(long currentTime)
 
     int currentState = this->readDigital();
 
-    if(currentState != this->lastState) {
-        if (currentState == HIGH) {
+    if (currentState != this->lastState) {
+        if (currentState == this->keyDownState) {
              this->onKeyDown();
         } else {
              this->onKeyUp();
@@ -24,6 +23,17 @@ void Button::tryThink(long currentTime)
     }
 }
 
+void Button::updatePullUpDownSettings()
+{
+    bool isPullUp = this->isPullUp();
+    this->keyDownState = isPullUp ? LOW : HIGH;
+    this->lastState = isPullUp ? HIGH : LOW;
+}
+
+void Button::onPullUpChange(bool state)
+{
+    this->updatePullUpDownSettings();
+}
 
 void Button::onKeyDown()
 {

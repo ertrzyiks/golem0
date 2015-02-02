@@ -7,14 +7,19 @@ class Button : public InputPin
 {
     protected:
         int lastState;
+        int keyDownState;
+
+        void onPullUpChange(bool state);
+
+        void updatePullUpDownSettings();
+
+        virtual void onKeyDown();
+        virtual void onKeyUp();
 
     public:
         Button(int pinNumber);
 
-        void tryThink(long currentTime);
-
-        virtual void onKeyDown();
-        virtual void onKeyUp();
+        virtual void tryThink(long currentTime);
 };
 
 #endif
