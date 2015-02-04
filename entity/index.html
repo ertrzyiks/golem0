@@ -135,7 +135,7 @@
 </code></pre>
 <h3 id="onthink">onThink</h3>
 <p>Callback triggered when entity is supposed to think.
-Each entity will think once on first loop call and then always when scheduled with <code>setNextThink</code>.</p>
+Each entity will think only when scheduled with <code>setNextThink</code>.</p>
 <pre><code>virtual void onThink(long currentTime);
 </code></pre>
 <h2 id="public-methods"><i class="fa fa-code"></i> Public methods</h2>
@@ -143,6 +143,10 @@ Each entity will think once on first loop call and then always when scheduled wi
 <h3 id="setnextthink">setNextThink</h3>
 <p>Schedule next <code>onThink</code> callback for given time (milis).</p>
 <pre><code>void setNextThink(long time);
+</code></pre>
+<h3 id="clearnextthink">clearNextThink</h3>
+<p>Ignore currently scheduled think. You need to call <code>setNextThink</code> again to receive <code>onThink</code> event.</p>
+<pre><code>void clearNextThink();
 </code></pre>
 
                     </div>

@@ -155,7 +155,13 @@ Once configured there, entities will get their setup and can react according to 
 To use it, create class extending Entity, override method <code>onThink</code> and add entity to world. </p>
 <p><strong>Important:</strong> make sure to call <code>setNextThink</code> to receive next think.</p>
 <p>Example:</p>
-<pre><code class="c++">class MyClass : public Entity {
+<pre><code class="c++">class MyClass : public Entity 
+{
+    MyClass : Entity() 
+    {
+        this-&gt;setNextThink();
+    }
+
     void onThink(long currentTime)
     {
         //Do something
