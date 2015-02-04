@@ -41,7 +41,13 @@ To use it, create class extending Entity, override method `onThink` and add enti
 Example:
 
 ```c++
-class MyClass : public Entity {
+class MyClass : public Entity 
+{
+    MyClass : Entity() 
+    {
+        this->setNextThink();
+    }
+    
     void onThink(long currentTime)
     {
         //Do something

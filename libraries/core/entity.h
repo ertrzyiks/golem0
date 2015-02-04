@@ -29,7 +29,8 @@ class Entity
         virtual void onSetup();
         virtual void onThink(long currentTime);
 
-        void setNextThink(long time);
+        void setNextThink(long time = 0);
+        void clearNextThink();
 };
 
 #endif

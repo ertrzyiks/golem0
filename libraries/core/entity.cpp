@@ -3,7 +3,7 @@
 Entity::Entity()
 {
     this->id[0] = '\0';
-    this->bRequestedThink = true;
+    this->bRequestedThink = false;
     this->lNextThink = 0;
 }
 
@@ -83,6 +83,11 @@ void Entity::setNextThink(long time)
 {
     this->lNextThink = time;
     this->bRequestedThink = true;
+}
+
+void Entity::clearNextThink()
+{
+    this->bRequestedThink = false;
 }
 
 void Entity::tryThink(long currentTime)
