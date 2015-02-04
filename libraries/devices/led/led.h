@@ -12,6 +12,8 @@ class Led : public OutputPin
         void off();
 
         void setOn(bool state);
+
+        void setBrightness(int value);
 };
 
 #endif

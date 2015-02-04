@@ -24,3 +24,8 @@ void Led::off()
 {
     this->writeDigital(LOW);
 }
+
+void Led::setBrightness(int value)
+{
+    this->writeAnalog(value);
+}
