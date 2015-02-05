@@ -7,7 +7,7 @@
 #include "core/world.h"
 #include "core/log.h"
 
-#include "animation/animation_handler.h"
+#include "animation/animation.h"
 
 #include "pin/pin.h"
 #include "pin/input_pin.h"
