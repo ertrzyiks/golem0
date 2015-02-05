@@ -5,6 +5,7 @@ Led::Led(int pinNumber) : OutputPin(pinNumber)
 {
     this->animation = new Animation();
     this->inIncreasing = false;
+    this->isToggledOn = false;
 }
 
 Led::~Led()
@@ -17,7 +18,21 @@ void Led::on()
     this->writeDigital(HIGH);
 }
 
-void Led::setOn(bool state)
+void Led::off()
+{
+    this->writeDigital(LOW);
+}
+
+void Led::toggle()
+{
+    if (this->isToggledOn) {
+        this->writeDigital(LOW);
+    } else {
+        this->writeDigital(HIGH);
+    }
+}
+
+void Led::isOn(bool state)
 {
     if (state) {
         this->on();
@@ -26,9 +41,23 @@ void Led::setOn(bool state)
     }
 }
 
-void Led::off()
+bool Led::isOn()
 {
-    this->writeDigital(LOW);
+    return this->isToggledOn;
+}
+
+void Led::writeDigital(int value)
+{
+    OutputPin::writeDigital(value);
+
+    this->isToggledOn = (value > 0);
+}
+
+void Led::writeAnalog(int value)
+{
+    OutputPin::writeDigital(value);
+
+    this->isToggledOn = (value == HIGH);
 }
 
 void Led::setBrightness(int value)

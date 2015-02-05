@@ -8,6 +8,7 @@ class Led : public OutputPin
     protected:
         Animation* animation;
         bool inIncreasing;
+        bool isToggledOn;
 
     public:
         Led(int pinNumber);
@@ -15,15 +16,20 @@ class Led : public OutputPin
 
         void on();
         void off();
+        void toggle();
 
-        void setOn(bool state);
+        void isOn(bool state);
+        bool isOn();
 
         void setBrightness(int value);
 
         void fadeIn(long duration = 500);
         void fadeOut(long duration = 500);
 
-         virtual void tryThink(long currentTime);
+        virtual void tryThink(long currentTime);
+
+        virtual void writeDigital(int value);
+        virtual void writeAnalog(int value);
 };
 
 #endif

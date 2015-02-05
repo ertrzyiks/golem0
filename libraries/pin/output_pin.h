@@ -9,8 +9,8 @@ class OutputPin : public Pin
     public:
         OutputPin(int pinNumber);
 
-        void writeDigital(int value);
-        void writeAnalog(int value);
+        virtual void writeDigital(int value);
+        virtual void writeAnalog(int value);
 };
 
 #endif

@@ -6,10 +6,16 @@
 class Button : public InputPin
 {
     protected:
-        int lastState;
+        int lastReadState;
+        int buttonState;
+        long lastStateChangeTime;
+
+        long debounceTime;
+
         int keyDownState;
 
         void onPullUpChange(bool state);
+        void onStateChange(bool buttonState);
 
         void updatePullUpDownSettings();
 
@@ -18,6 +24,9 @@ class Button : public InputPin
 
     public:
         Button(int pinNumber);
+
+        void setDebounceTime(long debounceTime);
+        long getDebounceTime();
 
         virtual void tryThink(long currentTime);
 };
