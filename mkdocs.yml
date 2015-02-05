@@ -4,6 +4,7 @@ pages:
 - [index.md, Home]
 - [world.md, World]
 - [entity.md, Entity]
+- [animation.md, Animation]
 - [pin/pin.md, Pins, Pin]
 - [pin/output_pin.md, Pins, OutputPin]
 - [pin/input_pin.md, Pins, InputPin]

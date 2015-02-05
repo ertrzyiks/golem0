@@ -41,6 +41,18 @@ Called when switch button is up (released).
 
 ## <i class="fa fa-code"></i> Public methods
 
+### setDebounceTime
+
+Set time on stable state change required to trigger button events, 50ms by default
+
+    void setDebounceTime(long debounceTime);
+
+### getDebounceTime
+
+Set time on stable state change required to trigger button events, 50ms by default
+
+    long getDebounceTime();
+
 ### isPullUp
 
 Inherited from [InputPin::isPullUp](../pin/input_pin.md#ispullup)

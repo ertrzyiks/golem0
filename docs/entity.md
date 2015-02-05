@@ -2,6 +2,10 @@
 
 Single entity of world. Elements of world should extend this class adding custom behavior using callbacks.
 
+## <i class="fa fa-pencil"></i> Constructor
+
+    Entity();
+    
 ## <i class="fa fa-exclamation-circle"></i> Callbacks
 ---
 

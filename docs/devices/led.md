@@ -21,9 +21,36 @@ Turn led on
 
     void off();
 
-### setOn
+### toggle
+
+Toggle led on/off state
+
+    void toggle();
+    
+### isOn
 
 Turn led on/off, depend of `state` param
 
-    void setOn(bool state);
+    void isOn(bool state);
+    
+Check if led is on or off
 
+    bool isOn();
+
+### setBrightness
+
+Manually set brightness of led, should be value in range 0-255
+
+    void setBrightness(int value);
+    
+### fadeIn
+
+Turn on with transition, duration in ms
+    
+    void fadeIn(long duration = 500);
+    
+### fadeOut
+
+Turn off with transition, duration in ms
+
+    void fadeOut(long duration = 500);
