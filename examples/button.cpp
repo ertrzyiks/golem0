@@ -3,6 +3,7 @@
 
 void setup()
 {
+    Serial.begin(9600);
     World::setup();
 }
 
@@ -11,31 +12,26 @@ void loop()
     World::loop();
 }
 
-
 class MyButton : public Button
 {
-    protected:
-        Led *led;
-
     public:
-        MyButton(int pin, const char* ledId) : Button(pin)
+        MyButton(int pin) : Button(pin)
         {
-            this->led = (Led*) World::findEntityById(ledId);
+            this->isPullUp(true);
         }
 
         void onKeyDown()
         {
-            this->led->on();
+            Serial.println("BUTTON DOWN");
         }
 
         void onKeyUp()
         {
-            this->led->off();
+            Serial.println("BUTTON UP");
         }
 };
 
 void world_init()
 {
-    World::addEntity("myled", new Led(13));
-    World::addEntity("mybutton", new MyButton(2, "myled"));
+    World::addEntity("mybutton", new MyButton(PIN_2));
 }

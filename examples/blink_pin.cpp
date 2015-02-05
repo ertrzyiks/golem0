@@ -19,6 +19,8 @@ class BlinkPinController : public OutputPin
         BlinkPinController(int pin) : OutputPin(pin)
         {
             this->value = true;
+
+            this->setNextThink();
         }
 
        void onThink(long currentTime)
@@ -33,5 +35,5 @@ class BlinkPinController : public OutputPin
 
 void world_init()
 {
-   World::addEntity(new BlinkPinController(13));
+   World::addEntity(new BlinkPinController(PIN_13));
 }

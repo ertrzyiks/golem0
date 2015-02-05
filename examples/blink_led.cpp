@@ -12,25 +12,20 @@ void loop()
 
 class BlinkLed : public Led
 {
-    protected:
-        bool state;
-
     public:
         BlinkLed(int pin) : Led(pin)
         {
-          this->state = true;
+          this->setNextThink();
         }
 
        void onThink(long currentTime)
        {
-            this->state = !this->state;
-            this->setOn(this->state);
-
+            this->toggle();
             this->setNextThink(currentTime + 500);
        }
 };
 
 void world_init()
 {
-   World::addEntity(new BlinkLed(13));
+   World::addEntity(new BlinkLed(PIN_13));
 }
