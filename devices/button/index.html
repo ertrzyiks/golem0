@@ -56,6 +56,13 @@
 
     
         
+            <li class="toctree-l1 ">
+                <a class="" href="../../animation">Animation</a>
+            </li>
+        
+
+    
+        
         <span>Pins</span>
             
                 <li class="toctree-l1 ">
@@ -94,6 +101,12 @@
                                 <li><a class="toctree-l3" href="#onkeydown">onKeyDown</a></li>
                             
                                 <li><a class="toctree-l3" href="#onkeyup">onKeyUp</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#setdebouncetime">setDebounceTime</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#getdebouncetime">getDebounceTime</a></li>
                             
                         
                             <li class="toctree-l2"><a href="#ispullup">isPullUp</a></li>
@@ -172,6 +185,14 @@ void world_init()
 <pre><code>virtual void onKeyUp();
 </code></pre>
 <h2 id="public-methods"><i class="fa fa-code"></i> Public methods</h2>
+<h3 id="setdebouncetime">setDebounceTime</h3>
+<p>Set time on stable state change required to trigger button events, 50ms by default</p>
+<pre><code>void setDebounceTime(long debounceTime);
+</code></pre>
+<h3 id="getdebouncetime">getDebounceTime</h3>
+<p>Set time on stable state change required to trigger button events, 50ms by default</p>
+<pre><code>long getDebounceTime();
+</code></pre>
 <h3 id="ispullup">isPullUp</h3>
 <p>Inherited from <a href="../../pin/input_pin#ispullup">InputPin::isPullUp</a></p>
 
