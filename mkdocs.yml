@@ -2,9 +2,9 @@ site_name: Golem0
 repo_url: https://github.com/ertrzyiks/golem0
 pages:
 - [index.md, Home]
-- [world.md, World]
-- [entity.md, Entity]
-- [animation.md, Animation]
+- [core/world.md, Core, World]
+- [core/entity.md, Core, Entity]
+- [core/animation.md, Core, Animation]
 - [pin/pin.md, Pins, Pin]
 - [pin/output_pin.md, Pins, OutputPin]
 - [pin/input_pin.md, Pins, InputPin]
