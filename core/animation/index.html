@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Pin - Golem0 - Golem0</title>
+    <title>Animation - Golem0 - Golem0</title>
     
 
     
@@ -45,17 +45,32 @@
         <span>Core</span>
             
                 <li class="toctree-l1 ">
-                    <a class="" href="../../core/world">World</a>
+                    <a class="" href="../world">World</a>
                     
                 </li>
             
                 <li class="toctree-l1 ">
-                    <a class="" href="../../core/entity">Entity</a>
+                    <a class="" href="../entity">Entity</a>
                     
                 </li>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../../core/animation">Animation</a>
+                <li class="toctree-l1 current">
+                    <a class="current" href=".">Animation</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l2"><a href="#animation">Animation</a></li>
+                            
+                                <li><a class="toctree-l3" href="#setduration">setDuration</a></li>
+                            
+                                <li><a class="toctree-l3" href="#start">start</a></li>
+                            
+                                <li><a class="toctree-l3" href="#isrunning">isRunning</a></li>
+                            
+                                <li><a class="toctree-l3" href="#update">update</a></li>
+                            
+                        
+                        </ul>
                     
                 </li>
             
@@ -65,25 +80,18 @@
         
         <span>Pins</span>
             
-                <li class="toctree-l1 current">
-                    <a class="current" href=".">Pin</a>
-                    
-                        <ul>
-                        
-                            <li class="toctree-l2"><a href="#pin-entity">Pin : Entity</a></li>
-                            
-                        
-                        </ul>
+                <li class="toctree-l1 ">
+                    <a class="" href="../../pin/pin">Pin</a>
                     
                 </li>
             
                 <li class="toctree-l1 ">
-                    <a class="" href="../output_pin">OutputPin</a>
+                    <a class="" href="../../pin/output_pin">OutputPin</a>
                     
                 </li>
             
                 <li class="toctree-l1 ">
-                    <a class="" href="../input_pin">InputPin</a>
+                    <a class="" href="../../pin/input_pin">InputPin</a>
                     
                 </li>
             
@@ -126,7 +134,7 @@
                 <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../..">Docs</a> &raquo;</li>
-    <li>Pin</li>
+    <li>Animation</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -139,32 +147,28 @@
 </div>
                 <div role="main">
                     <div class="section">
-                        <h1 id="pin-entity">Pin : Entity</h1>
-<p>Abstract class for two uses of pins</p>
-<ul>
-<li><a href="../output_pin">InputPin</a></li>
-<li><a href="../input_pin">OutputPin</a></li>
-</ul>
+                        <h1 id="animation">Animation</h1>
+<p>Make it easier to create transitions.</p>
 <h2 id="constructor"><i class="fa fa-pencil"></i> Constructor</h2>
-<pre><code>Pin(int pinNumber, int mode);
+<pre><code>Animation();
 </code></pre>
-<p><code>pinNumber</code> is yeah.. number of pin</p>
-<p><code>mode</code> should be INPUT, INPUT_PULLUP or OUTPUT</p>
-<h2 id="constants"><i class="fa fa-archive"></i> Constants</h2>
-<p>You can use them to make parameters more readable</p>
-<pre><code>#define PIN_1 1
-#define PIN_2 2
-#define PIN_3 3
-#define PIN_4 4
-#define PIN_5 5
-#define PIN_6 6
-#define PIN_7 7
-#define PIN_8 8
-#define PIN_9 9
-#define PIN_10 10
-#define PIN_11 11
-#define PIN_12 12
-#define PIN_13 13
+<h2 id="public-methods"><i class="fa fa-code"></i> Public methods</h2>
+<hr />
+<h3 id="setduration">setDuration</h3>
+<p>Set animation duration</p>
+<pre><code>Animation* setDuration(int value);
+</code></pre>
+<h3 id="start">start</h3>
+<p>Initialize animation, make it as running. Keep in mind that nothing happens until <code>update</code> call.</p>
+<pre><code>Animation* start();
+</code></pre>
+<h3 id="isrunning">isRunning</h3>
+<p>Return true, when animation is started and running. False when not started or finished.</p>
+<pre><code>bool isRunning();
+</code></pre>
+<h3 id="update">update</h3>
+<p>Update animation progress, returns fraction 0.0-1.0 of completion.    </p>
+<pre><code>float update(long timestamp);
 </code></pre>
 
                     </div>
@@ -173,10 +177,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../output_pin" class="btn btn-neutral float-right" title="OutputPin"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../pin/pin" class="btn btn-neutral float-right" title="Pin"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../core/animation" class="btn btn-neutral" title="Animation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../entity" class="btn btn-neutral" title="Entity"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -204,8 +208,8 @@
         
             <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
         
-      <span><a href="../../core/animation" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="../output_pin" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../entity" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../../pin/pin" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
 </body>

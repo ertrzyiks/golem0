@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Pin - Golem0 - Golem0</title>
+    <title>World - Golem0 - Golem0</title>
     
 
     
@@ -44,18 +44,33 @@
         
         <span>Core</span>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../../core/world">World</a>
+                <li class="toctree-l1 current">
+                    <a class="current" href=".">World</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l2"><a href="#world">World</a></li>
+                            
+                                <li><a class="toctree-l3" href="#worldloop">World::loop</a></li>
+                            
+                                <li><a class="toctree-l3" href="#worldsetup">World::setup</a></li>
+                            
+                                <li><a class="toctree-l3" href="#worldaddentity">World::addEntity</a></li>
+                            
+                                <li><a class="toctree-l3" href="#worldfindentitybyid">World::findEntityById</a></li>
+                            
+                        
+                        </ul>
                     
                 </li>
             
                 <li class="toctree-l1 ">
-                    <a class="" href="../../core/entity">Entity</a>
+                    <a class="" href="../entity">Entity</a>
                     
                 </li>
             
                 <li class="toctree-l1 ">
-                    <a class="" href="../../core/animation">Animation</a>
+                    <a class="" href="../animation">Animation</a>
                     
                 </li>
             
@@ -65,25 +80,18 @@
         
         <span>Pins</span>
             
-                <li class="toctree-l1 current">
-                    <a class="current" href=".">Pin</a>
-                    
-                        <ul>
-                        
-                            <li class="toctree-l2"><a href="#pin-entity">Pin : Entity</a></li>
-                            
-                        
-                        </ul>
+                <li class="toctree-l1 ">
+                    <a class="" href="../../pin/pin">Pin</a>
                     
                 </li>
             
                 <li class="toctree-l1 ">
-                    <a class="" href="../output_pin">OutputPin</a>
+                    <a class="" href="../../pin/output_pin">OutputPin</a>
                     
                 </li>
             
                 <li class="toctree-l1 ">
-                    <a class="" href="../input_pin">InputPin</a>
+                    <a class="" href="../../pin/input_pin">InputPin</a>
                     
                 </li>
             
@@ -126,7 +134,7 @@
                 <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../..">Docs</a> &raquo;</li>
-    <li>Pin</li>
+    <li>World</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -139,32 +147,36 @@
 </div>
                 <div role="main">
                     <div class="section">
-                        <h1 id="pin-entity">Pin : Entity</h1>
-<p>Abstract class for two uses of pins</p>
-<ul>
-<li><a href="../output_pin">InputPin</a></li>
-<li><a href="../input_pin">OutputPin</a></li>
-</ul>
-<h2 id="constructor"><i class="fa fa-pencil"></i> Constructor</h2>
-<pre><code>Pin(int pinNumber, int mode);
+                        <h1 id="world">World</h1>
+<p>World is static class that should be injected into Arduino setup and loop methds. 
+It allows you to manage entities.</p>
+<h2 id="public-methods"><i class="fa fa-code"></i> Public methods</h2>
+<hr />
+<h3 id="worldloop">World::loop</h3>
+<p>Handle timing based implementations. This function should be called in Arduino loop function. </p>
+<pre><code>static void loop();
 </code></pre>
-<p><code>pinNumber</code> is yeah.. number of pin</p>
-<p><code>mode</code> should be INPUT, INPUT_PULLUP or OUTPUT</p>
-<h2 id="constants"><i class="fa fa-archive"></i> Constants</h2>
-<p>You can use them to make parameters more readable</p>
-<pre><code>#define PIN_1 1
-#define PIN_2 2
-#define PIN_3 3
-#define PIN_4 4
-#define PIN_5 5
-#define PIN_6 6
-#define PIN_7 7
-#define PIN_8 8
-#define PIN_9 9
-#define PIN_10 10
-#define PIN_11 11
-#define PIN_12 12
-#define PIN_13 13
+<hr />
+<h3 id="worldsetup">World::setup</h3>
+<p>Do hardware setup. This function should be called in Arduino setup function.</p>
+<pre><code>static void setup();
+</code></pre>
+<hr />
+<h3 id="worldaddentity">World::addEntity</h3>
+<p>Add annonymous entity to world. You need to keed pointer on your own, 
+for now its not possible to find annonymous entity in the World.</p>
+<pre><code>static void addEntity(Entity* ent);
+</code></pre>
+<p>Adding entity to world in <code>world_init</code> function mean that entity will get proper setup and will be able to thinking.</p>
+<hr />
+<p>Add entity to world and label it with id. Id should be uniquee. 
+You can get pointer later on using <code>World::findEntityById</code> method.</p>
+<pre><code>static void addEntity(const char* endId, Entity* ent);
+</code></pre>
+<p>Adding entity to world in <code>world_init</code> function mean that entity will get proper setup and will be able to thinking.</p>
+<h3 id="worldfindentitybyid">World::findEntityById</h3>
+<p>Get reference to entity with given id.</p>
+<pre><code>static Entity* findEntityById(const char* entId);
 </code></pre>
 
                     </div>
@@ -173,10 +185,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../output_pin" class="btn btn-neutral float-right" title="OutputPin"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../entity" class="btn btn-neutral float-right" title="Entity"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../core/animation" class="btn btn-neutral" title="Animation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -204,8 +216,8 @@
         
             <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
         
-      <span><a href="../../core/animation" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="../output_pin" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../entity" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
 </body>
